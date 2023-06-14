@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    .fade-in-image{
+      font-size: 18px;
+      color: black;
+      font-family: Encode, sans-serif ;
+}
+    </style>
+<p><span id="title-switcher"value="0" class="fade-in-image"></span> </p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+        var hellos = [
+
+    "Intelligent Solutions & Products “in the Field”",
+    "Contact us to reduce the costs and headaches",
+    "Contact us if you an operator looking for more information",];
+    var index = 0;                               
+    $("#title-switcher").text(hellos[0]);                
+
+(function animate() {                         
+  $("#title-switcher").fadeOut(3000, function() {     
+    index = (index + 1) % hellos.length;      
+    this.textContent = hellos[index];         
+  }).fadeIn(3000, animate);                   
+})();
+    </script>
+</body>
+
+</html>
